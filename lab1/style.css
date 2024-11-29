@@ -1,0 +1,46 @@
+* {
+    background-color: aquamarine;
+}
+
+h1 {
+    text-align: center;
+}
+
+body {
+    width: auto;
+}
+
+.input-container {
+    text-align: center;
+    width: auto;
+    height: 200px;
+}
+
+input {
+    width: 500px;
+    height: 60px;
+    background-color: lightcoral;
+}
+
+button {
+    background-color: red;
+    height: 60px;
+    width: 100px;
+    color: aliceblue;
+
+    font-weight: bolder;
+}
+
+#container {
+    margin:auto;
+    width: 50%;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: auto auto;
+    row-gap: 20px;
+
+}
+
+li {
+    list-style: none;
+}
