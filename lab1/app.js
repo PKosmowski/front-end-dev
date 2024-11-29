@@ -84,25 +84,46 @@ fetch("https://pokeapi.co/api/v2/pokemon")
                     img.src = imgSRC
                     img.width = 300
                     img.height = 300
+
                     img.onclick = () => {
+                        isClicked = true
+
+                        // INITIALIZING EMPTY CONTAINER FOR STATS
+                        let nodeStats = document.createElement("DIV")
+                        nodeStats.id = "node-stats"
+
+
+
+
                         let types_list = data.types
                         let typesArr = [];
-
+                        // LOOP FOR GETTING POKEMON TYPES
                         for (typeName in types_list) {
                             typesArr += `${data.types[typeName].type.name}, `          
                         }
                         
-
+                        // TYPE OF POKEMON
                         let nodeTypes = document.createTextNode(`typ: ${typesArr}`)
-                        // let nodeHP = document.createTextNode(`HP: ${data.stats[0]}`)
+                        // HP
+                        let nodeHP = document.createElement("DIV")
+                        nodeHP.textContent = `hp: ${data.stats[0].base_stat}`
+                        // ATTACK
+                        let nodeAttack = document.createElement("DIV")
+                        nodeAttack.textContent = `attack: ${data.stats[1].base_stat}`
+                        // DEFENSE
+                        let nodeDefense = document.createElement("DIV")
+                        nodeDefense.textContent = `defense: ${data.stats[2].base_stat}`
+                        // 
 
 
 
-
-                        li.appendChild(nodeTypes)
-                        // li.appendChild(nodeHP)
+                        nodeStats.appendChild(nodeTypes)
+                        nodeStats.appendChild(nodeHP)
+                        nodeStats.appendChild(nodeAttack)
+                        nodeStats.appendChild(nodeDefense)
+                        li.appendChild(nodeStats)
                     }
-                        
+                    
                     li.appendChild(img)
 
                     
