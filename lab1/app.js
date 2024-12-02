@@ -51,6 +51,25 @@
     //         }
     //     })
 
+
+
+document.onreadystatechange = function () {
+    if (document.readyState !== "complete") {
+        document.querySelector("body").style.visibility = "hidden"
+        document.querySelector("#loader").style.visibility = "visible"
+        console.log('wczytywanko');
+        
+    } else {
+        document.querySelector("body").style.visibility = "visible"
+        document.querySelector("#loader").style.visibility = "hidden"
+        console.log('wczytane!');
+        
+    }
+}
+
+
+
+
 let isSelected = false
 
 if (isSelected == false) {
@@ -150,17 +169,17 @@ if (isSelected == false) {
         })
 }
 
-function getUserInput() {
-    let submittedPokemon = document.getElementById("inputPokemon")
+// function getUserInput() {
+//     let submittedPokemon = document.getElementById("inputPokemon")
     
-    async function getData() {
-        const data = await fetch(`https://pokeapi.co/api/v2/pokemon/${submittedPokemon.value}`)
-        return data;
-    }
-    async function main() {
-        const data = await getData()
-        console.log(data.json());
+//     async function getData() {
+//         const data = await fetch(`https://pokeapi.co/api/v2/pokemon/${submittedPokemon.value}`)
+//         return data;
+//     }
+//     async function main() {
+//         const data = await getData()
+//         console.log(data.json());
         
-    }
-    main()
-}
+//     }
+//     main()
+// }
