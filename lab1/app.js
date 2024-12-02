@@ -134,7 +134,12 @@ if (isSelected == false) {
                             // DEFENSE
                             let nodeDefense = document.createElement("DIV")
                             nodeDefense.textContent = `defense: ${data.stats[2].base_stat}`
-                            // 
+                            // WZROST
+                            let nodeHeight = document.createElement("DIV")
+                            nodeHeight.textContent = `wzrost: ${data.height}`
+                            // WAGA
+                            let nodeWeight = document.createElement("DIV")
+                            nodeWeight.textContent = `waga: ${data.weight}`
 
 
 
@@ -142,6 +147,8 @@ if (isSelected == false) {
                             nodeStats.appendChild(nodeHP)
                             nodeStats.appendChild(nodeAttack)
                             nodeStats.appendChild(nodeDefense)
+                            nodeStats.appendChild(nodeWeight)
+                            nodeStats.appendChild(nodeHeight)
                             li.appendChild(nodeStats)
                         }
                         
