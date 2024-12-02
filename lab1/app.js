@@ -90,7 +90,7 @@ if (isSelected == false) {
             for (pokemon in pokemon_list) {
                 let li = document.createElement("li")
                 let node = document.createTextNode(data.results[pokemon].name + `, numer: ${pokemon}`)
-                
+                isClicked = false
 
                 fetch(`https://pokeapi.co/api/v2/pokemon/${data.results[pokemon].name}`)
                     .then(response => {
