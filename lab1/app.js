@@ -81,7 +81,7 @@ if (isSelected == false) {
             if (response.ok) {
                 return response.json()             
             } else {
-                throw new Error("Not working!")
+                throw new Error("Not working!" + error)
             }
         })
         .then((data) => {
@@ -96,6 +96,8 @@ if (isSelected == false) {
                     .then(response => {
                         if (response.ok) {
                             return response.json()
+                        } else {
+                            throw new Error("Not working!" + error)
                         }
                     })
                     .then(data => {
@@ -174,6 +176,7 @@ if (isSelected == false) {
 
             
         })
+        
 }
 
 // function getUserInput() {
